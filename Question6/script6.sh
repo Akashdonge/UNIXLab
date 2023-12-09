@@ -1,4 +1,4 @@
-# Write a shell script that accepts two file names as arguments, checks if the permissions for these files are identical and if the permissions.
+# Write a shell script that accepts two file names as arguments, checks if the permissions for these files are identical and if the permissions are identical, output common permission and otherwise output each file name followed by its permissions.
 clear
  
 a=$(ls -l ${1} | cut -c2-10 | tr -d "\n")
