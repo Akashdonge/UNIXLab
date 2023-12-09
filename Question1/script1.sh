@@ -24,7 +24,7 @@ cut -d"," -f1,2,5 studentdb.txt|tr "," " "|column -t
 echo -e "\n"
 cut -d"," -f5 studentdb.txt|sort|uniq -c
 
-# Enter the number of students whose data is to be entered: 5
+# Enter the number of students whose data is to be entered: 3
 
 
 # Enter the first name of the student: John
