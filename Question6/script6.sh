@@ -1,19 +1,33 @@
-# Write a shell script that accepts two file names as arguments, checks if the permissions for these files are identical and if the permissions are identical, output common permission and otherwise output each file name followed by its permissions.
+# Write a shell program to do the followings on strings, Find length of a string, whether string is NULL, and two strings are equal or not.
+
 clear
- 
-a=$(ls -l ${1} | cut -c2-10 | tr -d "\n")
-b=$(ls -l ${2} | cut -c2-10 | tr -d "\n")
-if [ "$a" = "$b" ]; then
-  echo "The file permissions are identical"
-  echo $a
+read -p "Enter String 1: " st1
+read -p "Enter String 2: " st2
+
+echo "Length of String 1: ${#st1}"
+echo "Length of String 2: ${#st2}"
+
+if [ -z "$st1" ]; then
+  echo "String 1 is NULL"
+else 
+  echo "String 1 is not NULL"
+fi 
+if [ -z "$st2" ]; then
+  echo "String 2 is NULL"
 else
-  echo "The file permissions are not identical"
-  echo "$1 $a"|column -t
-  echo "$2 $b"|column -t
+  echo "String 2 is not NULL"
 fi
 
-# Output:
-# > sh script6.sh a.txt b.txt
-# The file permissions are not identical
-# a.txt  rwxr-xr-x
-# b.txt  rw-r--r--
+if [ "$st1" = "$st2" ]; then
+  echo "String 1 and String 2 are equal."
+else
+  echo "String 1 and String 2 are not equal."
+fi
+
+# Enter String 1: Mohit
+# Enter String 2: mohit
+# Length of String 1: 5
+# Length of String 2: 5
+# String 1 is not NULL
+# String 2 is not NULL
+# String 1 and String 2 are not equal.
