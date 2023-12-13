@@ -1,18 +1,17 @@
 # Write a shell program that accepts one or more file names as arguments and converts all of them to uppercase, provided they exist in the current directory.
 
-uppers=""
-if [ -e "$1" ]
-then
-  for var in $*; do
-    upper=$(echo $var | tr "[a-z]" "[A-Z]")
-    mv $1 $upper 
-  done
-else
-  echo "File does not exist"
-fi
+for file in $*; do
+    if [ -e "$file" ]; then
+        new_name=$(echo "$file" | tr '[a-z]' '[A-Z]')
+        mv "$file" "$new_name"
+    else
+        echo "File '$file' does not exist in the current directory."
+    fi
+done
 
 # Output: 
-# ❯ sh script4.sh a.txt
-# A.TXT
-# ❯ sh script4.sh skdjjf
-# File does not exist
+# ❯ ls
+# a.txt  b.txt  script4.sh
+# ❯ sh script4.sh a.txt b.txt
+# ❯ ls
+# A.TXT  B.TXT  script4.sh
