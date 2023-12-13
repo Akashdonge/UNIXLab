@@ -4,7 +4,8 @@ uppers=""
 if [ -e "$1" ]
 then
   for var in $*; do
-    echo $var | tr "[a-z]" "[A-Z]"
+    upper=$(echo $var | tr "[a-z]" "[A-Z]")
+    mv $1 $upper 
   done
 else
   echo "File does not exist"
