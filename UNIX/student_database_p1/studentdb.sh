@@ -15,9 +15,9 @@ while [ $i -lt $n ]; do
     ((i++))
 done
 
-# Printing the Name and Department of students:
+echo -e "\nPrinting the Name and Department of students: \n"
 cut -d "," -f 2,3,4 student_database.csv | tr ',' ' ' | column -t
  
-# Printing Department and Department Strength: 
+echo -e "\nPrinting Department and Department Strength: \n"
 echo -e "n  Department"
 cut -d "," -f 4 <(sed '1d' student_database.csv) | tr ',' ' ' | sort | uniq -c | column -t
