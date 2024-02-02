@@ -1,3 +1,0 @@
-John,Wick,1KI22LL007,3,CSE
-Mohit,Nair,1MS22IS079,3,ISE
-Walter,White,1ME22TH420,3,ISE
