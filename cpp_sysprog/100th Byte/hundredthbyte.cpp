@@ -4,7 +4,6 @@
 #include<fcntl.h>
 #include<sys/stat.h>
 using namespace std;
-
 int main(int argc, char* argv[]) {
     int fd, skval;
     char c;
